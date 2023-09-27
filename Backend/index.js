@@ -17,7 +17,7 @@ connect(MONGODB_URI)
     });
 
 app.get('/', (req, res) => {
-    console.log(request);
+    console.log(req);
     return res.status(234).send('Welcome To MERN Stack Tutorial');
 });
 
