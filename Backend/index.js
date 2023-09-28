@@ -1,34 +1,27 @@
-import express from "express";
-import { PORT, MONGODB_URI } from "./config.js";
-import mongoose from 'mongoose';
+const express = require("express");
+const connectDB = require("./connectDB");
+const cors = require("cors");
+require("dotenv").config();
+
 
 const app = express();
+connectDB();
+// Middleware
+app.use(cors());
+app.use(express.urlencoded({ extended: true }));
+// Middleware to parse JSON data from requests
+app.use(express.json());
 
-// MongoDB connection
-import { connect } from 'mongodb';
-connect(MONGODB_URI)
 
-    .then(client => {
-        console.log('Connected to MongoDB');
-        const db = client.db();
-        // Access your database using client.db()
+const PORT = process.env.PORT || 3000;
 
-        // ... Rest of your code here
-    });
 
+// default route
 app.get('/', (req, res) => {
-    console.log(req);
-    return res.status(234).send('Welcome To MERN Stack Tutorial');
+    res.send("Welcome To MERN Stack Tutorial");
 });
 
-mongoose
-    .connect(MONGODB_URI)
-    .then(() => {
-        console.log('App connected to database');
-        app.listen(PORT, () => {
-            console.log(`App is listening to port: ${PORT}`);
-        });
-    })
-    .catch((error) => {
-        console.log(error);
-    });
+
+app.listen(PORT, () => {
+    console.log(`App is listening to port http://localhost:${PORT}`);
+});
