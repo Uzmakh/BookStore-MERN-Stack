@@ -2,7 +2,7 @@ const express = require("express");
 const connectDB = require("./connectDB");
 const cors = require("cors");
 require("dotenv").config();
-
+const Book = require("./models/Books");
 
 const app = express();
 connectDB();
@@ -19,6 +19,26 @@ const PORT = process.env.PORT || 3000;
 // default route
 app.get('/', (req, res) => {
     res.send("Welcome To MERN Stack Tutorial");
+});
+
+// creating a route
+app.get("/api/books", async (req, res) => {
+    try {
+        const category = req.query.category;
+        const filter = {};
+        if (category) {
+            filter.category = category;
+        }
+        const data = await Book.find(filter);
+        res.json(data);
+    } catch (error) {
+        res.status(500).json({ error: "An error occurred while fetching books." })
+    }
+})
+
+
+app.get('*', (req, res) => {
+    res.sendStatus("404");
 });
 
 
