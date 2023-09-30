@@ -18,7 +18,7 @@ const PORT = process.env.PORT || 3000;
 
 // default route
 app.get('/', (req, res) => {
-    res.send("Welcome To MERN Stack Tutorial");
+    res.send("Welcome To MERN Stack Project");
 });
 
 // creating a route
