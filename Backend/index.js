@@ -20,7 +20,6 @@ const PORT = process.env.PORT || 3000;
 app.get('/', (req, res) => {
     res.send("Welcome To MERN Stack Project");
 });
-
 // creating a route
 app.get("/api/books", async (req, res) => {
     try {
