@@ -11,6 +11,7 @@ app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 // Middleware to parse JSON data from requests
 app.use(express.json());
+app.use("/uploads", express.static("uploads"));
 
 
 const PORT = process.env.PORT || 3000;
