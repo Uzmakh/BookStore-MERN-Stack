@@ -32,7 +32,7 @@ const upload = multer({ storage: storage });
 
 
 // creating a route
-app.get("/api/books", async (req, res) => {
+app.get("/api/book", async (req, res) => {
     try {
         const category = req.query.category;
         const filter = {};
@@ -47,7 +47,7 @@ app.get("/api/books", async (req, res) => {
 })
 
 
-app.get("/api/books/:slug", async (req, res) => {
+app.get("/api/book/:slug", async (req, res) => {
     try {
 
         const slugParam = req.params.slug;
@@ -60,7 +60,7 @@ app.get("/api/books/:slug", async (req, res) => {
 })
 
 // to add a new book
-app.post("/api/books", upload.single("thumbnail"), async (req, res) => {
+app.post("/api/book", upload.single("thumbnail"), async (req, res) => {
     try {
 
         const newBook = new Book({
@@ -81,7 +81,7 @@ app.post("/api/books", upload.single("thumbnail"), async (req, res) => {
 
 
 // to update an existing book
-app.put("/api/books", upload.single("thumbnail"), async (req, res) => {
+app.put("/api/book", upload.single("thumbnail"), async (req, res) => {
     try {
 
         const bookId = req.body.bookId;
