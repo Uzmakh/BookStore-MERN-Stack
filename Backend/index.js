@@ -1,12 +1,13 @@
 const express = require("express");
-const connectDB = require("./connectDB");
 const cors = require("cors");
 const multer = require("multer");
 require("dotenv").config();
 const Book = require("./models/Books");
+const connectToMongodb = require("./connectDB");
 
 const app = express();
-connectDB();
+
+connectToMongodb();
 // Middleware
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));

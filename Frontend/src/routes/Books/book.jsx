@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 
 const Book = () => {
-  const baseUrl = "http://localhost:5173/api/book";
+  const baseUrl = "http://localhost:8000/api/book";
   const [data, setData] = useState([]);
 
   useEffect(() => {
