@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const multer = require("multer");
 require("dotenv").config();
-const Book = require("./models/Books");
+const Book = require("./models/Book.models");
 const connectToMongodb = require("./connectDB");
 
 const app = express();
