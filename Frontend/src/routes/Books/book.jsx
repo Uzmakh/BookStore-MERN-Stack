@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 
 const Book = () => {
-  const baseUrl = "http://localhost:8000/api/book";
+  const baseUrl = "http://localhost:8000/api/books";
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -18,8 +18,8 @@ const Book = () => {
 
       } catch (error) {
         console.log(error);
-      }
-    }
+      };
+    };
     fetchData();
   }, []);
 
@@ -31,12 +31,12 @@ const Book = () => {
       <ul className="books">
         {data.map((item) => (
           <li key={item._id}>
-            <Link to={`/book/${item.slug}`}>
-              <img src={`http://localhost:5173/uploads/${item.thumbnail}`} alt={item.title} />
+            <Link to={`/books/${item.slug}`}>
+              <img src={`http://localhost:8000/uploads/${item.thumbnail}`} alt={item.title} />
               <h3>{item.title}</h3>
             </Link>
           </li>
-        ))}
+        ))};
       </ul>
     </div>
   );

@@ -10,13 +10,13 @@ function App() {
   return (
     <>
       <Router>
-        <Header />
+        <Header/>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/books" element={<Books />} />
+          <Route path="/" element = { <Home/>} />
+          <Route path="/about" element = { <About />} />
+          <Route path="/books" element = { <Books />} />
         </Routes>
-        <Footer />
+        <Footer/>
       </Router>
     </>
   )

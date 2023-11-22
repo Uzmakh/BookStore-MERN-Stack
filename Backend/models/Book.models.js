@@ -28,7 +28,7 @@ const BookSchema = new Schema({
     },
     createdAt: {
         type: Date,
-        default: Date.now(),
+        default: Date.now(),    //js will cteate it
     },
 });
 
