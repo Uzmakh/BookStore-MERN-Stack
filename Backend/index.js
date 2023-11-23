@@ -8,67 +8,45 @@ const Book = require("./models/Book.models");
 const app = express();
 
 connectToMongodb();
-// Middleware
+// Middlewares
 app.use(cors());
 // Middleware to parse JSON data from requests
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-// to display the images on browser
+// to display the images.thumbnails on browser
 app.use("/uploads", express.static("uploads"));
 
 
 const PORT = process.env.PORT || 8000;
 
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, "uploads/");
-    },
-    filename: function (req, file, cb) {
-        const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
-        cb(null, uniqueSuffix + "-" + file.originalname);
-    },
-});
+// const storage = multer.diskStorage({
+//     destination: function (req, file, cb) {
+//         cb(null, "uploads/");
+//     },
+//     filename: function (req, file, cb) {
+//         const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
+//         cb(null, uniqueSuffix + "-" + file.originalname);
+//     },
+// });
 
-const upload = multer({ storage: storage });
+// const upload = multer({ storage: storage });
 
 
 
 // creating a route
-
-app.get("/api/books", async (req, res) => {
+ app.get("/api/books", async (req, res) => {
     try {
-        const data = await Book.find({});
+        const category = req.query.category;
+        const filter = {};
+        if (category) {
+            filter.category = category;
+        }
+        const data = await Book.find(filter);
         res.json(data);
     } catch (error) {
-        res.status(500).json({error: "An error occured while fetching books."})
+        res.status(500).json({ error: "An error occurred while fetching books." })
     }
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-// app.get("/api/book", async (req, res) => {
-//     try {
-//         const category = req.query.category;
-//         const filter = {};
-//         if (category) {
-//             filter.category = category;
-//         }
-//         const data = await Book.find(filter);
-//         res.json(data);
-//     } catch (error) {
-//         res.status(500).json({ error: "An error occurred while fetching books." })
-//     }
-// })
+})
 
 
 // app.get("/api/book/:slug", async (req, res) => {
@@ -145,15 +123,7 @@ app.get("/api/books", async (req, res) => {
 
 
 
-// default route
-app.get('/', (req, res) => {
-    res.send("Welcome To MERN Stack Project");
-});
 
-
-app.get('*', (req, res) => {
-    res.sendStatus("404");
-});
 
 
 app.listen(PORT, () => {
