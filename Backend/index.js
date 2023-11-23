@@ -34,7 +34,7 @@ const PORT = process.env.PORT || 8000;
 
 
 // creating a route
- app.get("/api/books", async (req, res) => {
+app.get("/api/books", async (req, res) => {
     try {
         const category = req.query.category;
         const filter = {};
@@ -48,21 +48,19 @@ const PORT = process.env.PORT || 8000;
     }
 })
 
-
-// app.get("/api/book/:slug", async (req, res) => {
-//     try {
-
-//         const slugParam = req.params.slug;
-
-//         const data = await Book.find({ slug: slugParam });
-//         res.json(data);
-//     } catch (error) {
-//         res.status(500).json({ error: "An error occurred while fetching books." })
-//     }
-// })
+// API-route to a singleBook details page,
+app.get("/api/books/:slug", async (req, res) => {
+    try {
+        const slugParam = req.params.slug;
+        const data = await Book.find({ slug: slugParam });
+        res.json(data);
+    } catch (error) {
+        res.status(500).json({ error: "An error occurred while fetching books." })
+    }
+})
 
 // // to add a new book
-// app.post("/api/book", upload.single("thumbnail"), async (req, res) => {
+// app.post("/api/books", upload.single("thumbnail"), async (req, res) => {
 //     try {
 
 //         const newBook = new Book({
