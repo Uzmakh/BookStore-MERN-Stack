@@ -29,14 +29,14 @@ const About = () => {
           </tr>
           <tr>
             <td style={{ color: "blue" }}>READ</td>
-            <td>/api/books/:id</td>
+            <td>/api/books/:slug</td>
             <td>GET</td>
             <td>Empty</td>
             <td>Returns A Single Book</td>
           </tr>
           <tr>
             <td style={{ color: "green" }}>CREATE</td>
-            <td>/api/books</td>
+            <td>/api/books/createBook</td>
             <td>POST</td>
             <td>JSON?</td>
             <td>New Book Created</td>

@@ -38,6 +38,8 @@ const Book = () => {
     <div>
       <h1>Books</h1>
       <p>This is where we need Nodejs, Express and MongoDB to grab the data; so the date below is pulled from the MongoDB database.</p>
+
+      <Link to={"/books/createBook"}> + Add New Book </Link>
       <h2>Fetch Example</h2>
 
       <div className="filters">

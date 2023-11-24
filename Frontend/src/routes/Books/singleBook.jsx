@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from "react-router-dom";
 
-function singleBook() {
+function SingleBook() {
   const [data, setData] = useState([]);
 
   const { slug } = useParams();
@@ -65,4 +65,4 @@ function singleBook() {
   );
 };
 
-export default singleBook
+export default SingleBook
