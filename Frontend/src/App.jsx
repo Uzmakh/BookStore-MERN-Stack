@@ -20,7 +20,7 @@ function App() {
           <Route path="/books" element = { <Books/>} />
           <Route path="/books/:slug" element = { <SingleBook/>} />
           <Route path="/books/createBook" element = { <CreateBook/>} />
-          <Route path="/books/editBook/:slug" element = { <EditBook/>} />
+          <Route path="/editBook/:slug" element = { <EditBook/>} />
         </Routes>
         <Footer/>
       </Router>
