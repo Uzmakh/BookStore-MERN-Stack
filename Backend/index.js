@@ -101,21 +101,21 @@ app.put("/api/books", upload.single("thumbnail"), async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: "An error occurred while updating the book" });
   }
-  });
+});
 
 //  to delete an existing book
-      app.delete("/api/books/:id", async (req, res) => {
-          const bookId = req.params.id;
+app.delete("/api/books/:id", async (req, res) => {
+  const bookId = req.params.id;
 
-          try {
-              await Book.deleteOne({ _id: bookId });
-              res.json("Book deleted!" + req.body.bookId);
-          } catch (error) {
-              res.json(error);
-          }
+  try {
+    await Book.deleteOne({ _id: bookId });
+    res.json("Book deleted!" + req.body.bookId);
+  } catch (error) {
+    res.json(error);
+  }
 
-      });
+});
 
-   app.listen(PORT, () => {
-    console.log(`App is listening to port http://localhost:${PORT}`);
-  });
+app.listen(PORT, () => {
+  console.log(`App is listening to port http://localhost:${PORT}`);
+});
