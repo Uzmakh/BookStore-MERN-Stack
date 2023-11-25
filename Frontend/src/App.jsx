@@ -15,12 +15,12 @@ function App() {
       <Router>
         <Header/>
         <Routes>
-          <Route path="/" element = { <Home/>} />
-          <Route path="/about" element = { <About/>} />
-          <Route path="/books" element = { <Books/>} />
-          <Route path="/books/:slug" element = { <SingleBook/>} />
-          <Route path="/books/createBook" element = { <CreateBook/>} />
-          <Route path="/editBook/:slug" element = { <EditBook/>} />
+          <Route path="/" element = { <Home/> } />
+          <Route path="/about" element = { <About/> } />
+          <Route path="/books" element = { <Books/> } />
+          <Route path="/books/:slug" element = { <SingleBook/> } />
+          <Route path="/books/createBook" element = { <CreateBook/> } />
+          <Route path="/editBook/:slug" element = { <EditBook/> } />
         </Routes>
         <Footer/>
       </Router>
