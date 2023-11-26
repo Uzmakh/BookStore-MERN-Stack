@@ -1,3 +1,4 @@
+![editBook](https://github.com/Uzmakh/BookStore-MERN-Stack/assets/91914613/81e22fa5-306c-4277-90c2-e21dbdf333ed)
 # BookStore-MERN-Stack. This is a repository for my Book Store MERN Stack Project.
 At present, this is a simple and basic Book App where we can 
     * store a collection of books,
