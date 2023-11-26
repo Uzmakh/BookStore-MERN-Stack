@@ -10,6 +10,4 @@ Moreover, the app has a select menu to choose book categories to read and downlo
 The app has three main pages i.e., Home, Books, and About,
 and three sub-pages i.e., createBook, editBook, and UpdateBook.
  
-![bookapp](https://github.com/Uzmakh/BookStore-MERN-Stack/assets/91914613/6b26764e-a868-4db4-83ac-4ed6fc66c07b)
-
-![createBook](https://github.com/Uzmakh/BookStore-MERN-Stack/assets/91914613/bb0e134e-00e8-4f44-8983-c6070618b081)
+![bookapp](https://github.com/Uzmakh/BookStore-MERN-Stack/assets/91914613/6b26764e-a868-4db4-83ac-4ed6fc66c07b)   ![createBook](https://github.com/Uzmakh/BookStore-MERN-Stack/assets/91914613/bb0e134e-00e8-4f44-8983-c6070618b081)
