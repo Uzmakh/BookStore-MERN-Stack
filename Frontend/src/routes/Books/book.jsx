@@ -37,7 +37,7 @@ const Book = () => {
     // This is the portion where books are being displayed on the page
     <div>
       <h1>Books</h1>
-      <p>This is where we need Nodejs, Express and MongoDB to grab the data; so the date below is pulled from the MongoDB database.</p>
+      <p>This is where we need Nodejs, Express and MongoDB to grab the data; so the data below is pulled from the MongoDB database.</p>
 
       <Link to={"/books/createBook"}> + Add New Book </Link>
       <h2>Fetch Example</h2>
