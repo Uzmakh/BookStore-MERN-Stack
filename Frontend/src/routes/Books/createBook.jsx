@@ -5,18 +5,18 @@ import { Link } from "react-router-dom";
 function CreateBook() {
   const [title, setTitle] = useState("");
   const [slug, setSlug] = useState("");
- const [stars, setStar] = useState("");
+  const [stars, setStar] = useState("");
   const [description, setDescription] = useState("");
   const [categories, setCategories] = useState([])
   const [submitted, setSubmitted] = useState();
-    const [image, setImage] = useState(NoImageSelected);
- // Added this line
+  const [image, setImage] = useState(NoImageSelected);
+  // Added this line
   const [thumbnail, setThumbnail] = useState(null);
 
   const createBook = async (e) => {
     e.preventDefault();
 
-     const formData = new FormData();
+    const formData = new FormData();
     formData.append("title", title);
     formData.append("slug", slug);
     formData.append("stars", stars);
@@ -25,7 +25,7 @@ function CreateBook() {
     // Also added this line
     formData.append("thumbnail", thumbnail);
 
-       try {
+    try {
       const response = await fetch("http://localhost:8000/api/books", {
         method: "POST",
         body: formData,
@@ -45,20 +45,20 @@ function CreateBook() {
     }
   };
 
-    const onImageChange = (e) => {
+  const onImageChange = (e) => {
     if (e.target.files && e.target.files[0]) {
       setImage(URL.createObjectURL(e.target.files[0]));
       setThumbnail(e.target.files[0]);
     }
   }
 
-   const handleCategoryChange = (e) => {
+  const handleCategoryChange = (e) => {
     setCategories(e.target.value.split(",").map((category) => category.trim()));
   }
 
   return (
     <div>
-       <Link to={"/books"}>◄ Books</Link>
+      <Link to={"/books"}>◄ Books</Link>
       <h1>Create Book</h1>
       <p>This is where we use Node.js, Express & MongoDB to grab some data.</p>
 
@@ -124,11 +124,11 @@ function CreateBook() {
         </form>
       )}
       {/* /form-submitted condition */}
-     
+
     </div>
     // /main div
 
-  
+
   )
 };
 

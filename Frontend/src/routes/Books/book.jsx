@@ -43,22 +43,22 @@ const Book = () => {
       <h2>Fetch Example</h2>
 
       <div className="filters">
-      <label>Category:</label>
-      <select  onChange={(e) => setSelectedCategory(e.target.value)}>
+        <label>Category:</label>
+        <select onChange={(e) => setSelectedCategory(e.target.value)}>
 
-        <option value="all">All</option>
-        <option value="fiction">Fiction</option>
-        <option value="romance">Romance</option>
-        <option value="adventure">Adventure</option>
-        <option value="thriller">Thriller</option>
-        <option value="crime">Crime</option>
-        <option value="food">Food</option>
-        <option value="science">Science</option>
-        <option value="horror">Horror</option>
-        <option value="other">Other</option>
-      </select>
+          <option value="all">All</option>
+          <option value="fiction">Fiction</option>
+          <option value="romance">Romance</option>
+          <option value="adventure">Adventure</option>
+          <option value="thriller">Thriller</option>
+          <option value="crime">Crime</option>
+          <option value="food">Food</option>
+          <option value="science">Science</option>
+          <option value="horror">Horror</option>
+          <option value="other">Other</option>
+        </select>
       </div>
-      
+
       {/* condition implied through ternary operator; ?
     if Loading 
     if not Loading */}

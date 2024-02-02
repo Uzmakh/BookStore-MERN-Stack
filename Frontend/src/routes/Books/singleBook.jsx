@@ -27,10 +27,10 @@ function SingleBook() {
   }, [slug]);
 
   // function for calling starRating,
-   function StarRating({ numberOfStars }) {
+  function StarRating({ numberOfStars }) {
     const stars = [];
     for (let i = 0; i < numberOfStars; i++) {
-        stars.push(<span key={i}>⭐</span>)
+      stars.push(<span key={i}>⭐</span>)
     }
     return <div>Rating: {stars}</div>
   };
@@ -45,7 +45,7 @@ function SingleBook() {
         <div className="bookdetails">
           <div className="col-1">
             <img src={`http://localhost:8000/uploads/${element.thumbnail}`} alt={element.title} />
-               <br/>
+            <br />
             <Link to={`/editbook/${element.slug}`}>✏️Edit</Link>
           </div>
           <div className="col-2">
